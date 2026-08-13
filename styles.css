@@ -115,7 +115,7 @@ a {
 
 .eyebrow {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   margin: 0 0 24px;
   color: var(--muted);
@@ -128,6 +128,8 @@ a {
 .eyebrow__dot {
   width: 8px;
   height: 8px;
+  margin-top: 0.3em;
+  flex-shrink: 0;
   border-radius: 50%;
   background: var(--lime);
   box-shadow: 0 0 20px rgba(202, 255, 51, 0.6);
