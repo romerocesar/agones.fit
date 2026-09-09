@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Agones is a modern sports league management platform."
+      content="Agones brings sports leagues together. Manage seasons, team registrations, rosters, schedules, results, and standings in one place."
     />
     <meta name="theme-color" content="#081c15" />
     <title>Agones — Everyone on the same field.</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=3" />
   </head>
   <body>
-    <main class="hero">
+    <a class="skip-link" href="#product">Skip to product details</a>
+    <main>
+    <div class="hero">
       <div class="field-lines" aria-hidden="true">
         <span class="field-lines__circle"></span>
         <span class="field-lines__line"></span>
@@ -29,7 +31,11 @@
           <span>AGONES</span>
         </a>
 
-        <span class="nav__descriptor">League management, reimagined.</span>
+        <div class="nav__links">
+          <a href="#league-managers">For leagues</a>
+          <a href="#team-managers">For teams</a>
+          <a href="#players">For players</a>
+        </div>
       </nav>
 
       <section class="hero__content" aria-labelledby="hero-title">
@@ -46,8 +52,8 @@
 
         <div class="hero__footer">
           <p class="intro">
-            One place to organize every team, schedule every game, and keep the
-            season moving.
+            Your sports league, all together. One place for registrations,
+            rosters, schedules, and results. Less organizing. More game time.
           </p>
 
           <div class="season" aria-label="Coming soon">
@@ -59,7 +65,112 @@
 
       <p class="side-note" aria-hidden="true">From first whistle to final</p>
 
-      <footer class="site-footer">
+      <a class="hero__scroll" href="#product">
+        <span>See what Agones can do</span><span aria-hidden="true">↓</span>
+      </a>
+    </div>
+
+    <section class="product section-shell" id="product" aria-labelledby="product-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>One league. Everyone connected.</p>
+        <h2 id="product-title">A home for your<br /><span class="accent">whole season.</span></h2>
+        <p class="section-intro">Agones is a web app that brings league managers, team managers, and players into one shared space. From opening registration to checking the final standings, everyone knows where to go.</p>
+      </div>
+      <div class="season-path" aria-label="Your season with Agones">
+        <a href="#league-managers"><span class="step-number">01 / Organize</span><h3>Set the season up</h3><p>Divisions, registrations, venues, and games, all in one place.</p><span class="text-link">For league managers <span aria-hidden="true">↗</span></span></a>
+        <a href="#team-managers"><span class="step-number">02 / Bring your team</span><h3>Get ready to compete</h3><p>Build your roster and register your team for the next season.</p><span class="text-link">For team managers <span aria-hidden="true">↗</span></span></a>
+        <a href="#players"><span class="step-number">03 / Play</span><h3>Stay in the game</h3><p>Find your next match and follow your team's progress.</p><span class="text-link">For players <span aria-hidden="true">↗</span></span></a>
+      </div>
+    </section>
+
+    <section class="audience audience--league" id="league-managers" aria-labelledby="league-title">
+      <div class="section-shell audience__grid">
+        <div class="audience__copy">
+          <p class="eyebrow"><span class="section-number">01</span> For league managers</p>
+          <h2 id="league-title">Run the season.<br /><span class="accent">Skip the scramble.</span></h2>
+          <p class="section-intro">Give every part of your league a place. Keep teams, registrations, and games organized as your season gets going.</p>
+          <ul class="feature-list">
+            <li><h3>Make room for every division</h3><p>Set season dates, add divisions, and choose a registration fee for each competition.</p></li>
+            <li><h3>Keep registrations in order</h3><p>Review team applications, track approvals and paid or unpaid fees, and export registration records.</p></li>
+            <li><h3>Put the schedule in place</h3><p>Add games individually or import a CSV. Set times and venues, assign referees, and update details as plans change.</p></li>
+            <li><h3>Keep results moving</h3><p>You or the assigned referee can record scores. Results feed directly into each division's standings.</p></li>
+          </ul>
+        </div>
+        <figure class="product-preview preview--league">
+          <div class="preview__top"><span class="preview__brand">AGONES / SEASON</span><span class="status"><span aria-hidden="true">●</span> In progress</span></div>
+          <div class="preview__body">
+            <p class="preview__eyebrow">Riverside League</p>
+            <h3 class="preview__title">Fall season</h3>
+            <div class="preview__stats"><div><strong>12</strong><span>Teams</span></div><div><strong>2</strong><span>Divisions</span></div><div><strong>30</strong><span>Games</span></div></div>
+            <div class="preview__label"><span>Upcoming games</span><span>Matchday 04</span></div>
+            <div class="fixture"><div class="fixture__date"><strong>19</strong><span>SEP</span></div><div><strong>Riverside FC <span class="versus">vs</span> Park United</strong><p>10:00 AM · Riverside Park</p></div><span class="fixture__tag">Open</span></div>
+            <div class="fixture"><div class="fixture__date"><strong>19</strong><span>SEP</span></div><div><strong>Northside <span class="versus">vs</span> East End</strong><p>12:00 PM · Central Field</p></div><span class="fixture__tag">Open</span></div>
+            <div class="preview__note"><span class="accent" aria-hidden="true">↳</span> Teams, times, venues. A clearer game day.</div>
+          </div>
+          <figcaption>Illustrative season view · Sample data</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="audience audience--team" id="team-managers" aria-labelledby="team-title">
+      <div class="section-shell audience__grid">
+        <div class="audience__copy">
+          <p class="eyebrow"><span class="section-number">02</span> For team managers</p>
+          <h2 id="team-title">Your team.<br /><span class="accent">Ready for what's next.</span></h2>
+          <p class="section-intro">Build a team that lasts beyond one season. Keep your roster, competition registrations, and game schedule together.</p>
+          <ul class="feature-list">
+            <li><h3>Bring your roster together</h3><p>Create your team, choose its colors, and add players with existing accounts. Players can also join your team themselves.</p></li>
+            <li><h3>Find your next competition</h3><p>Browse leagues and seasonal divisions, apply with your team, and follow your registration status across seasons.</p></li>
+            <li><h3>Stay on top of game day</h3><p>See your team's games in one place. When SMS is enabled, team managers can receive text updates when game details or results change.</p></li>
+          </ul>
+        </div>
+        <figure class="product-preview preview--team">
+          <div class="preview__top"><span class="preview__brand">AGONES / TEAM</span><span class="preview__eyebrow">Team overview</span></div>
+          <div class="preview__body">
+            <div class="team-identity"><span class="team-crest" aria-hidden="true">R<span>FC</span></span><div><p class="preview__eyebrow">Your team</p><h3 class="preview__title">Riverside FC</h3><p class="team-colors"><span aria-hidden="true"></span>Green &amp; white</p></div></div>
+            <div class="registration-summary"><span>Fall season · Open division</span><span class="status">Approved</span></div>
+            <div class="preview__label"><span>Team roster</span><span>Players</span></div>
+            <ul class="roster"><li><span class="avatar" aria-hidden="true">AJ</span><span>Alex Jordan</span><span>Player</span></li><li><span class="avatar" aria-hidden="true">SC</span><span>Sam Chen</span><span>Player</span></li><li><span class="avatar" aria-hidden="true">MR</span><span>Morgan Reyes</span><span>Player</span></li></ul>
+            <div class="preview__note"><span class="accent" aria-hidden="true">↳</span> One team. Season after season.</div>
+          </div>
+          <figcaption>Illustrative team view · Sample data</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="audience audience--players" id="players" aria-labelledby="players-title">
+      <div class="section-shell audience__grid">
+        <div class="audience__copy">
+          <p class="eyebrow"><span class="section-number">03</span> For players</p>
+          <h2 id="players-title">Know when to play.<br /><span class="accent">See where you stand.</span></h2>
+          <p class="section-intro">The details you need, before and after the whistle. Sign in to find your team, follow the schedule, and catch up on results.</p>
+          <ul class="feature-list">
+            <li><h3>Find your people</h3><p>Join a team and see who's on the roster. Your team page brings your teammates and games together.</p></li>
+            <li><h3>Know your next match</h3><p>Check the opponent, date, time, and venue so you know where to be and when.</p></li>
+            <li><h3>Follow the season's story</h3><p>See match results and division standings, including wins, draws, goals, and points. Soccer scoring keeps the table up to date as results come in.</p></li>
+          </ul>
+        </div>
+        <figure class="product-preview preview--players">
+          <div class="preview__top"><span class="preview__brand">AGONES / MATCHDAY</span><span class="preview__eyebrow">Open division</span></div>
+          <div class="preview__body">
+            <p class="preview__eyebrow">Latest result · Full time</p>
+            <div class="scoreboard"><div><span class="club-badge" aria-hidden="true">R</span><strong>Riverside FC</strong></div><p>3 <span>–</span> 1</p><div><span class="club-badge club-badge--away" aria-hidden="true">N</span><strong>Northside</strong></div></div>
+            <div class="preview__label"><span>Division standings</span><span>Fall season</span></div>
+            <table class="standings"><caption class="sr-only">Example Open division standings</caption><thead><tr><th scope="col">Team</th><th scope="col"><abbr title="Played">P</abbr></th><th scope="col"><abbr title="Goal difference">GD</abbr></th><th scope="col"><abbr title="Points">PTS</abbr></th></tr></thead><tbody><tr class="standings__highlight"><th scope="row"><span>01</span> Riverside FC</th><td>3</td><td>+5</td><td>9</td></tr><tr><th scope="row"><span>02</span> Park United</th><td>3</td><td>+2</td><td>6</td></tr><tr><th scope="row"><span>03</span> Northside</th><td>3</td><td>−2</td><td>3</td></tr><tr><th scope="row"><span>04</span> East End</th><td>3</td><td>−5</td><td>0</td></tr></tbody></table>
+          </div>
+          <figcaption>Illustrative results view · Sample data</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="closing section-shell" aria-labelledby="closing-title">
+      <p class="eyebrow">Less admin. More action.</p>
+      <h2 id="closing-title">Every team.<br />Every game.<br /><span>One place.</span></h2>
+      <div class="closing__footer"><p>A shared home for the people who make your league happen.</p><div class="season"><span class="season__label">Agones</span><span class="season__value">Coming soon</span></div></div>
+    </section>
+    </main>
+
+    <footer class="site-footer">
         <span>&copy; 2026 Agones LLC</span>
 
         <nav class="site-footer__links" aria-label="Legal">
@@ -68,6 +179,5 @@
           <a href="/privacy/">Privacy</a>
         </nav>
       </footer>
-    </main>
   </body>
 </html>
