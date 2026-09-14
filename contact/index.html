@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Agones — email support, book a call with sales, or send us a message."
+    />
+    <meta name="theme-color" content="#081c15" />
+    <title>Contact — Agones</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css?v=3" />
+  </head>
+  <body class="doc-page">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="doc-nav">
+      <a class="brand" href="/" aria-label="Agones home">
+        <span class="brand__mark" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span>AGONES</span>
+      </a>
+
+      <span class="nav__descriptor">Contact</span>
+    </header>
+
+    <main class="doc doc--wide" id="content">
+      <p class="doc__site">agones.fit</p>
+
+      <h1>Get in touch</h1>
+
+      <p class="doc__lede contact__lede">
+        Questions, feedback, or ready to kick off your next season? Pick
+        whichever way works best for you &mdash; we read every message.
+      </p>
+
+      <div class="contact-options">
+        <a class="contact-card" href="mailto:support@agones.fit">
+          <span class="contact-card__num">01</span>
+          <span class="contact-card__title">Email support</span>
+          <span class="contact-card__text">
+            Account help, bug reports, and general questions.
+          </span>
+          <span class="contact-card__action">support@agones.fit</span>
+        </a>
+
+        <a
+          class="contact-card"
+          href="https://cal.com/john-guballa-olnc7v/agones-intro"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="contact-card__num">02</span>
+          <span class="contact-card__title">Talk to sales</span>
+          <span class="contact-card__text">
+            Book a 15-minute call to see if Agones fits your league.
+          </span>
+          <span class="contact-card__action">Schedule a call</span>
+        </a>
+
+        <a class="contact-card" href="#message">
+          <span class="contact-card__num">03</span>
+          <span class="contact-card__title">Send a message</span>
+          <span class="contact-card__text">
+            Drop us a note below and we&rsquo;ll get back to you by email.
+          </span>
+          <span class="contact-card__action">Write to us</span>
+        </a>
+      </div>
+
+      <section class="contact-form-section" aria-labelledby="message">
+        <h2 id="message">Send a message</h2>
+
+        <!--
+          Submissions are relayed by Formspree, so the destination inbox is
+          configured in the Formspree dashboard and never appears in this page.
+        -->
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/moeqgkyv"
+          method="POST"
+        >
+          <div class="field">
+            <label for="email">Your email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input
+              id="subject"
+              name="_subject"
+              type="text"
+              maxlength="150"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="query">Message</label>
+            <textarea
+              id="query"
+              name="message"
+              rows="6"
+              maxlength="5000"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Honeypot: hidden from people, filled in by bots. -->
+          <input
+            class="contact-form__trap"
+            type="text"
+            name="_gotcha"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          />
+
+          <div class="contact-form__footer">
+            <button class="button" type="submit">Send message</button>
+            <p class="contact-form__status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; 2026 Agones LLC</span>
+
+      <nav class="site-footer__links" aria-label="Legal">
+        <a href="/">Home</a>
+        <a href="/terms/">Terms</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/contact/" aria-current="page">Contact</a>
+      </nav>
+    </footer>
+
+    <script>
+      (function () {
+        var form = document.querySelector(".contact-form");
+        var status = form.querySelector(".contact-form__status");
+        var button = form.querySelector("button");
+
+        function show(message, isError) {
+          status.textContent = message;
+          status.classList.toggle("is-error", Boolean(isError));
+        }
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          button.disabled = true;
+          show("Sending…");
+
+          fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          })
+            .then(function (response) {
+              if (!response.ok) throw new Error(response.status);
+              form.reset();
+              show("Thanks — your message is on its way. We’ll be in touch soon.");
+            })
+            .catch(function () {
+              show(
+                "Something went wrong sending your message. Please try again or email support@agones.fit.",
+                true
+              );
+            })
+            .finally(function () {
+              button.disabled = false;
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
